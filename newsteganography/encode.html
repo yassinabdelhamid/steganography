@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Samuel Leder & Yassin Abdelhamid">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Steganography: Encode</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="text-align: center;">Steganography Encode</h1>
+            <div class="bk-btn" onclick="window.location='index.html'" style="text-align: center; margin: auto;">
+                <div class="bk-btn-triangle">
+                    <div class="bk-bt-bar">
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <br><br>
+    <p style="border: 1px solid; background-color: rgba(231, 230, 230, 0.11); padding: 5px;">
+        Auf dieser Webseite ist es Ihnen möglich, eine Geheimnachricht in ein Bild mit Format JPEG/JPG oder PNG zu
+        verstecken.<br>
+        Folgenderweise müsse Sie vorgehen um das Steganography Tool zu nutzen: <br>
+        1. Geben Sie Ihre Geheimnachricht im Textfeld ein. <br>
+        2. Sende Sie Ihre Geheimnachricht durch den "ok" Knopf ab. <br>
+        3. Es erscheint ein neuer Knopf um eine gewünschte Bilddatei hochzuladen. Ihre Geheimnachricht wird in der
+        zuhochladenden Bilddatei versteckt. <br>
+        4. Die neue kodierte Datei wird angezeigt. Laden Sie diese herunter. <br>
+    </p>
+    <br>
+
+    <h2>Kodieren</h2>
+    <div id="textInput">
+        <label>Kodieren Sie ein Bild mit Ihrem eingegebenen Text</label>
+        <br>
+
+        <input type="text" id="message" placeholder="Geheimnachricht" class="form-control"
+            onchange="showImageUpload();">
+        <br>
+        <input type="button" value="OK"
+            style="color: white; background-color: rgba(18, 207, 81, 0.507); position: absolute; border: none; border-radius: 8px;">
+        <br><br>
+    </div>
+    <div id="imgInput">
+        <div id="imgUpload" style="visibility: hidden;">
+            <label>Füllen Sie Ihre Geheimnachricht in ein Bild</label>
+            <br>
+            <input type="button" name="uploadimgencode" id="uploadimgencode" value="Datei auswählen"
+                style="color: white; background-color: rgba(18, 207, 81, 0.507); position: absolute; border: none; border-radius: 8px;"
+                onclick="document.getElementById('encode').click();">
+            <input type="file" id="encode" name="encode" accept=".jpeg, .jpg, .png" style="visibility: hidden;"
+                onchange="return fileValidationEncode();"/>
+            <br><br>
+        </div>
+        <!-- The HTML <canvas> element is used to draw graphics via JavaScript. -->
+        <!-- The <canvas> element is only a container for graphics. You must use JavaScript to actually draw the graphics. -->
+        <canvas id="encodeCanvas" style="width:100%;"></canvas>
+        <canvas id="textCanvas" style="display: none;"></canvas>
+    </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/JavaScript" src="encode.js"></script>
+
+</body>
+
+</html>

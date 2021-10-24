@@ -1,0 +1,77 @@
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.button {
+    color: #FFFFFF;
+    font-size: 23px;
+    transition: all 1s;
+    cursor: pointer;
+    margin: 5px;
+
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .bk-btn {
+    height: 38px;
+    width: 38px;
+    background-color: black;
+    border-radius: 50%;
+}
+.bk-btn .bk-btn-triangle {
+    position: relative;
+    top: 6px;
+    left: 10.4px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-right: 13px solid white;
+}
+.bk-btn .bk-btn-bar {
+    position: relative;
+    background-color: white;
+    height: 7.8px;
+    width: 13px;
+    top: -3.64px;
+    left: 22.88px;
+}
